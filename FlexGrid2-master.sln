@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexGrid2-master.CSharp.Plugins", "FlexGrid2-master.CSharp.Plugins.csproj", "{9011539A-7AD8-715B-BA0A-7194EBB6EA7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexGrid2-master.CSharp", "FlexGrid2-master.CSharp.csproj", "{906CD660-EDB6-F3AD-9303-C2A56E4F64B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexGrid2-master.CSharp.Editor", "FlexGrid2-master.CSharp.Editor.csproj", "{09133A49-A924-B99E-6C51-D536FEC1D89C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9011539A-7AD8-715B-BA0A-7194EBB6EA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9011539A-7AD8-715B-BA0A-7194EBB6EA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9011539A-7AD8-715B-BA0A-7194EBB6EA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9011539A-7AD8-715B-BA0A-7194EBB6EA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906CD660-EDB6-F3AD-9303-C2A56E4F64B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906CD660-EDB6-F3AD-9303-C2A56E4F64B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906CD660-EDB6-F3AD-9303-C2A56E4F64B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906CD660-EDB6-F3AD-9303-C2A56E4F64B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09133A49-A924-B99E-6C51-D536FEC1D89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09133A49-A924-B99E-6C51-D536FEC1D89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09133A49-A924-B99E-6C51-D536FEC1D89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09133A49-A924-B99E-6C51-D536FEC1D89C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

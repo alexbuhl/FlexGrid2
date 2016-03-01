@@ -23,6 +23,9 @@ public class CarControls : MonoBehaviour
     public Transform etrierFLtransf;
     public Transform etrierRLtransf;
     public Transform volant;
+    public AudioSource accélération;
+    public AudioSource ralentie;
+    public AudioSource décélération;
     public int rotatespeed;
     public int rotatewheel;
     // Use this for initialization
@@ -34,6 +37,22 @@ public class CarControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!décélération.isPlaying & !accélération.isPlaying)
+        {
+            ralentie.Play();
+        }
+        if (reallybackspeed <=1 & reallyspeed <=1)
+        {
+            if (accélération.isPlaying)
+            {
+                accélération.Stop();
+            }
+            if (décélération.isPlaying)
+            {
+                décélération.Stop();
+            }
+            ralentie.Play();
+        }
         if (Input.GetKey(up))
         {
             rigid.centerOfMass = new Vector3(0, -1, 0);
@@ -42,6 +61,15 @@ public class CarControls : MonoBehaviour
                 reallyspeed += 1;
             }
             transform.Translate(Vector3.forward * reallyspeed * Time.deltaTime);
+            if (ralentie.isPlaying)
+            {
+                ralentie.Stop();
+            }
+            if (décélération.isPlaying)
+            {
+                décélération.Stop();
+            }
+            accélération.Play();
         }
         else if (Input.GetKey(backward))
         {
@@ -51,14 +79,33 @@ public class CarControls : MonoBehaviour
                 reallybackspeed += 1;
             }
             transform.Translate(Vector3.forward * (-reallybackspeed) * Time.deltaTime);
+            if (ralentie.isPlaying)
+            {
+                ralentie.Stop();
+            }
+            if (décélération.isPlaying)
+            {
+                décélération.Stop();
+            }
+            accélération.Play();
         }
         if (Input.GetKeyUp(up))
         {
             rigid.centerOfMass = new Vector3(0, 0, 0);
+            if (accélération.isPlaying)
+            {
+                accélération.Stop();
+            }
+            if (ralentie.isPlaying)
+            {
+                ralentie.Stop();
+            }
+            décélération.Play();
         }
         if (Input.GetKeyUp(backward))
         {
             rigid.centerOfMass = new Vector3(0, 0, 0);
+            
         }
         if (Input.GetKey(left) && (Input.GetKey(up) || Input.GetKey(backward) || reallybackspeed > 1 || reallyspeed > 1))
         {
@@ -72,12 +119,30 @@ public class CarControls : MonoBehaviour
         {
             reallyspeed -= 1;
             transform.Translate(Vector3.forward * reallyspeed * Time.deltaTime);
+            if (accélération.isPlaying)
+            {
+                accélération.Stop();
+            }
+            if (ralentie.isPlaying)
+            {
+                ralentie.Stop();
+            }
+            décélération.Play();
         }
 
         if (reallybackspeed > 1 & !Input.GetKey(backward))
         {
             reallybackspeed -= 1;
             transform.Translate(Vector3.forward * (-reallybackspeed) * Time.deltaTime);
+            if (accélération.isPlaying)
+            {
+                accélération.Stop();
+            }
+            if (ralentie.isPlaying)
+            {
+                ralentie.Stop();
+            }
+            décélération.Play();
         }
         if (Input.GetKey(up))
         {
@@ -88,8 +153,8 @@ public class CarControls : MonoBehaviour
         }
         if (Input.GetKey(backward))
         {
-            wheelFLtransf.Rotate(- rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
-            wheelFRtransf.Rotate(- rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
+            wheelFLtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
+            wheelFRtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             wheelRRtransf.Rotate(rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             wheelRLtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
         }
@@ -113,8 +178,8 @@ public class CarControls : MonoBehaviour
             wheelFLtransf.localEulerAngles = new Vector3(0, wheelFLtransf.localEulerAngles.y + rotatewheel, 0);
             etrierFRtransf.localEulerAngles = new Vector3(0, etrierFRtransf.localEulerAngles.y + rotatewheel, 0);
             etrierFLtransf.localEulerAngles = new Vector3(0, etrierFLtransf.localEulerAngles.y + rotatewheel, 0);
-            wheelFLtransf.Rotate(- rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
-            wheelFRtransf.Rotate(- rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
+            wheelFLtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
+            wheelFRtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             wheelRRtransf.Rotate(rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             wheelRLtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             //volant.Rotate(rotatespeed / 60 * 360 * Time.deltaTime, 0, rotatespeed / 60 * 360 * Time.deltaTime);
@@ -125,8 +190,8 @@ public class CarControls : MonoBehaviour
             wheelFLtransf.localEulerAngles = new Vector3(0, wheelFLtransf.localEulerAngles.y - rotatewheel, 0);
             etrierFRtransf.localEulerAngles = new Vector3(0, etrierFRtransf.localEulerAngles.y - rotatewheel, 0);
             etrierFLtransf.localEulerAngles = new Vector3(0, etrierFLtransf.localEulerAngles.y - rotatewheel, 0);
-            wheelFLtransf.Rotate(- rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
-            wheelFRtransf.Rotate(- rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
+            wheelFLtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
+            wheelFRtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             wheelRRtransf.Rotate(rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             wheelRLtransf.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, 0);
             //volant.Rotate(-rotatespeed / 60 * 360 * Time.deltaTime, 0, -rotatespeed / 60 * 360 * Time.deltaTime);

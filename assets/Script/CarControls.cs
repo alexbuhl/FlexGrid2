@@ -25,6 +25,7 @@ public class CarControls : MonoBehaviour
     public Transform volant;
     public int rotatespeed;
     public int rotatewheel;
+    public int enfoncement;
     // Use this for initialization
     void Start()
     {
@@ -42,6 +43,7 @@ public class CarControls : MonoBehaviour
                 reallyspeed += 1;
             }
             transform.Translate(Vector3.forward * reallyspeed * Time.deltaTime);
+            transform.Translate(Vector3.down * enfoncement * Time.deltaTime);
         }
         else if (Input.GetKey(backward))
         {

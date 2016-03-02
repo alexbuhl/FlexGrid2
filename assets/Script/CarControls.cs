@@ -62,9 +62,7 @@ public class CarControls : MonoBehaviour
                 reallyspeed += 1;
             }
             transform.Translate(Vector3.forward * reallyspeed * Time.deltaTime);
-<<<<<<< HEAD
             transform.Translate(Vector3.down * enfoncement * Time.deltaTime);
-=======
             if (ralentie.isPlaying)
             {
                 ralentie.Stop();
@@ -74,7 +72,6 @@ public class CarControls : MonoBehaviour
                 décélération.Stop();
             }
             accélération.Play();
->>>>>>> 5bd99f7cf7ee729239f66ec82d1700507c230b6a
         }
         else if (Input.GetKey(backward))
         {

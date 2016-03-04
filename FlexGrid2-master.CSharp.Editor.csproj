@@ -158,28 +158,6 @@
     <Compile Include="assets\editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\3DForge\FantasyExteriors\Village &amp; Towns\Documents\Blacksmith v1.0 - user guide.txt" />
-    <None Include="assets\Pro Standard Assets\Image Based\ColorCorrectionEffect.shader" />
-    <None Include="assets\Pro Standard Assets\Image Based\ColorCorrectionEffect_26.shader" />
-    <None Include="assets\Pro Standard Assets\Image Based\EdgeDetectX.shader" />
-    <None Include="assets\Pro Standard Assets\Image Based\GlowEffectDownsample.shader" />
-    <None Include="assets\Pro Standard Assets\Image Based\GlowEffectDownsample_26.shader" />
-    <None Include="assets\Shaders\Alpha-Diffuse-ZWrite.shader" />
-    <None Include="assets\Shaders\Alpha-VertexLitGlow02.shader" />
-    <None Include="assets\Shaders\AlphaTest-Diffuse-GEqual.shader" />
-    <None Include="assets\Shaders\GlassBuilding.shader" />
-    <None Include="assets\Shaders\GlassReflect.shader" />
-    <None Include="assets\Shaders\Glassreflect2D.shader" />
-    <None Include="assets\Shaders\LightMappedDiffusetDetail.shader" />
-    <None Include="assets\Shaders\LightsEmmissive.shader" />
-    <None Include="assets\Shaders\MirrorReflectionLit.shader" />
-    <None Include="assets\Shaders\Normal-BumpSpec_EnvLightmapped.shader" />
-    <None Include="assets\Shaders\PolyTerrain\FirstPassLightmap.shader" />
-    <None Include="assets\Shaders\PolyTerrain\polysplatting.cginc" />
-    <None Include="assets\Shaders\ShadowProjection.shader" />
-    <None Include="assets\Shaders\Skidmarks.shader" />
-    <None Include="assets\Shaders\TransparentLightMappedVertexLiZWrite.shader" />
-    <None Include="assets\Textures\VFX\ShadowProjection.shader" />
     <None Include="assets\fantasy skybox free\Readme\Readme.txt" />
     <None Include="assets\standard assets\Cameras\CameraGuidelines.txt" />
     <None Include="assets\standard assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
@@ -188,7 +166,6 @@
     <None Include="assets\standard assets\characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="assets\standard assets\characters\firstpersoncharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="assets\standard assets\characters\thirdpersoncharacter\ThirdPersonCharacterGuidelines.txt" />
-    <None Include="assets\standard assets\effects\GlassRefraction\Glass-Stained-BumpSpecDistort.shader" />
     <None Include="assets\standard assets\effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="assets\standard assets\effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="assets\standard assets\effects\ToonShading\Shaders\ToonBasicOutline.shader" />
@@ -280,8 +257,6 @@
     <None Include="assets\standard assets\vehicles\car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="assets\standard assets\vehicles\car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="assets\standard assets\vehicles\car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
-    <None Include="assets\~AlternatePhysicsModel\Source Assets\Cars\Car.shader" />
-    <None Include="assets\~AlternatePhysicsModel\Source Assets\Skidmarks\Skidmarks.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

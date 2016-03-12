@@ -8,8 +8,8 @@ Properties {
 	_DistortParams ("Distortions (Bump waves, Reflection, Fresnel power, Fresnel bias)", Vector) = (1.0 ,1.0, 2.0, 1.15)
 	_InvFadeParemeter ("Auto blend parameter (Edge, Shore, Distance scale)", Vector) = (0.15 ,0.15, 0.5, 1.0)
 	
-	_AnimationTiling ("Animation Tiling (Displacement)", Vector) = (2.2 ,2.2, -1.1, -1.1)
-	_AnimationDirection ("Animation Direction (displacement)", Vector) = (1.0 ,1.0, 1.0, 1.0)
+	_AnimationTiling ("Animation Tiling (Displacement)", Vector) = (0 ,0, 0, 0)
+	_AnimationDirection ("Animation Direction (displacement)", Vector) = (0 ,0, 0, 0)
 
 	_BumpTiling ("Bump Tiling", Vector) = (1.0 ,1.0, -2.0, 3.0)
 	_BumpDirection ("Bump Direction & Speed", Vector) = (1.0 ,1.0, -1.0, 1.0)
@@ -23,13 +23,13 @@ Properties {
 	_WorldLightDir ("Specular light direction", Vector) = (0.0, 0.1, -0.5, 0.0)
 	_Shininess ("Shininess", Range (2.0, 500.0)) = 200.0
 	
-	_GerstnerIntensity("Per vertex displacement", Float) = 1.0
-	_GAmplitude ("Wave Amplitude", Vector) = (0.3 ,0.35, 0.25, 0.25)
-	_GFrequency ("Wave Frequency", Vector) = (1.3, 1.35, 1.25, 1.25)
-	_GSteepness ("Wave Steepness", Vector) = (1.0, 1.0, 1.0, 1.0)
-	_GSpeed ("Wave Speed", Vector) = (1.2, 1.375, 1.1, 1.5)
-	_GDirectionAB ("Wave Direction", Vector) = (0.3 ,0.85, 0.85, 0.25)
-	_GDirectionCD ("Wave Direction", Vector) = (0.1 ,0.9, 0.5, 0.5)
+	_GerstnerIntensity("Per vertex displacement", Float) = 0
+	_GAmplitude ("Wave Amplitude", Vector) = (0 ,0, 0, 0)
+	_GFrequency ("Wave Frequency", Vector) = (0, 0, 0, 0)
+	_GSteepness ("Wave Steepness", Vector) = (0, 0, 0, 0)
+	_GSpeed ("Wave Speed", Vector) = (0, 0, 0, 0)
+	_GDirectionAB ("Wave Direction", Vector) = (0 ,0, 0, 0)
+	_GDirectionCD ("Wave Direction", Vector) = (0 ,0, 0, 0)
 }
 
 
@@ -120,7 +120,7 @@ CGINCLUDE
 	// HQ VERSION
 	//
 	
-	v2f vert(appdata_full v)
+	 v2f vert(appdata_full v)
 	{
 		v2f o;
 		
@@ -158,7 +158,7 @@ CGINCLUDE
 		
 		UNITY_TRANSFER_FOG(o,o.pos);
 		return o;
-	}
+	} 
 
 	half4 frag( v2f i ) : SV_Target
 	{
@@ -366,7 +366,7 @@ Subshader
 			#pragma target 3.0
 		
 			#pragma vertex vert
-			#pragma fragment frag
+			//#pragma fragment frag
 			#pragma multi_compile_fog
 		
 			#pragma multi_compile WATER_VERTEX_DISPLACEMENT_ON WATER_VERTEX_DISPLACEMENT_OFF

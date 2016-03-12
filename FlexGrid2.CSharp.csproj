@@ -80,7 +80,6 @@
     <Compile Include="assets\Script\CarCamera.cs" />
     <Compile Include="assets\Script\CarControls.cs" />
     <Compile Include="assets\Script\Carcameras1.cs" />
-    <Compile Include="assets\Script\Carcontrols1.cs" />
     <Compile Include="assets\Script\FollowPath.cs" />
     <Compile Include="assets\fantasy skybox free\Scripts\FSPlayer.cs" />
   </ItemGroup>
